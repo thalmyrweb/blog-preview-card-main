@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300;700;900&display=swap");
+
+:root {
+  --yellow: #f4d04e;
+  --gray-950: #111111;
+  --gray-500: #6b6b6b;
+  --white: #ffffff;
+
+  --spacing-4: 0.25rem;
+  --spacing-8: 0.5rem;
+  --spacing-12: 0.75rem;
+  --spacing-24: 1.5rem;
+
+  --text-preset-3: 0.875rem;
+  --text-preset-2: 1rem;
+  --text-preset-1: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+}
+
+body {
+  background-color: var(--yellow);
+}
+
+.main-container {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 75rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-24);
+}
+
+.card-container {
+  background-color: var(--white);
+  max-width: 384px;
+  max-height: 522px;
+  padding: var(--spacing-24);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--spacing-8) var(--spacing-8) 2px var(--gray-950);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card-content,
+.profile {
+  margin-top: var(--spacing-24);
+}
+
+.card-label {
+  background-color: var(--yellow);
+  color: var(--gray-950);
+  text-decoration: none;
+  margin-bottom: var(--spacing-12);
+  padding: var(--spacing-4) var(--spacing-8);
+  display: inline-block;
+  font-weight: bolder;
+  font-size: var(--text-preset-3);
+  border-radius: var(--spacing-4);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.card-label:hover {
+  background-color: #e2c438;
+}
+
+.card-date {
+  color: var(--gray-950);
+  margin-bottom: var(--spacing-12);
+  font-size: var(--text-preset-3);
+  display: block;
+}
+
+.card-title {
+  color: var(--gray-950);
+  font-weight: bolder;
+  margin-bottom: var(--spacing-12);
+  font-size: var(--text-preset-1);
+}
+
+.card-paragraph {
+  color: var(--gray-500);
+  margin-bottom: var(--spacing-12);
+  font-size: var(--text-preset-2);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-12);
+  position: relative;
+
+}
+
+.profile::after {
+  content: "";
+  width: 30%;
+  height: var(--spacing-4);
+  background-color: var(--yellow);
+  position: absolute;
+  border-radius: 8px;
+  bottom: -8px;
+  transform: scaleX(0);
+}
+
+.profile:hover::after{
+    transform: scaleX(1);
+}
+
+.image-profile {
+  width: 32px;
+  height: 32px;
+}
+
+.text-profile {
+  color: var(--gray-950);
+  font-size: var(--text-preset-3);
+  font-weight: bolder;
+}
+
+@media (max-width: 576px) {
+  .card-container {
+    max-width: 327px;
+    max-height: 501px;
+  }
+}
